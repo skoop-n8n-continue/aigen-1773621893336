@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="manifest" href="./manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Key Generator</title>
+    <link rel="stylesheet" href="styles.css?v=x9z2w1">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h3>Security Key Generator</h3>
+        </header>
+
+        <main class="buttons-grid">
+            <div class="button-section" id="section-alpha">
+                <button id="btn-alpha" class="primary-btn">Alpha</button>
+                <div class="code-display" id="display-alpha">------</div>
+            </div>
+
+            <div class="button-section" id="section-bravo">
+                <button id="btn-bravo" class="primary-btn">Bravo</button>
+                <div class="code-display" id="display-bravo">------</div>
+            </div>
+
+            <div class="button-section" id="section-charlie">
+                <button id="btn-charlie" class="primary-btn">Charlie</button>
+                <div class="code-display" id="display-charlie">------</div>
+            </div>
+        </main>
+
+        <footer id="combined-section" class="hidden">
+            <h3>Combined Key</h3>
+            <div id="combined-key" class="combined-display"></div>
+        </footer>
+    </div>
+    <script src="script.js?v=x9z2w1"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js')
+          .then(function (reg) { console.log('[PWA] SW registered:', reg.scope); })
+          .catch(function (err) { console.warn('[PWA] SW registration failed:', err); });
+      });
+    }
+  </script>
+</body>
+</html>
